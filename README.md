@@ -2,6 +2,9 @@
 
 CloakPx is a privacy-focused message encryption and decryption tool. It ensures absolute anonymity by allowing users to communicate securely without revealing personal information. Messages are encrypted and hidden in the EXIF data of images, which can be shared through any medium, maintaining security and privacy.
 
+[Web Demo](https://fishylunar.github.io/cloakpx/dist.html "Web Demo")
+
+
 ### Features
 
 - 100% anonymous, no sign-ups, accounts, verifications, simply type in an alias whenever you use it.
