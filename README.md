@@ -8,8 +8,7 @@ CloakPx is a privacy-focused message encryption and decryption tool. It ensures 
 - Strong Encryption: Messages are encrypted with AES-256-CBC encryption to ensure privacy, and keep your messages from prying eyes.
 - Hidden in plain sight: Encrypted messages are hidden inside the EXIF data of images which allows you to send your hidden messages without it looking suspicious to others, as they'll just see a normal picture.
 - 100% Local: No data gets stores, or leaves your device. It even works offline!
-- iOS Shortcut: A version made for Siri Shortcuts to make encrypting & decrypting of hidden messages easy for iOS users.
-
+- iOS Shortcut: A version made for Siri Shortcuts to make encrypting & decrypting of hidden messages easy for iOS users. (Still in development, but should work as expected)
 
 
 ### 1. Introduction
@@ -66,7 +65,7 @@ Decryption Process: The tool extracts the encrypted message from the EXIF data a
 
 CloakPx is designed to work entirely offline. For Android users, an HTML Viewer app is required to render the HTML page. This approach ensures that no data leaves the user's device, enhancing security and privacy.
 
-#### For iOS users:
+#### For iOS users - Still in development.
 There is a version of CloakPx for Shortcuts, which makes it easy to encrypt & decrypt messages.
 
 ### 9. Libraries Used
