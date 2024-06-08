@@ -12,7 +12,7 @@ CloakPx is a privacy-focused message encryption and decryption tool. It ensures 
 
 **Table of Contents**
 
-[TOCM]
+[TOC]
 
 
 ### 1. Introduction
