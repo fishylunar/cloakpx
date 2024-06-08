@@ -10,9 +10,6 @@ CloakPx is a privacy-focused message encryption and decryption tool. It ensures 
 - 100% Local: No data gets stores, or leaves your device. It even works offline!
 - iOS Shortcut: A version made for Siri Shortcuts to make encrypting & decrypting of hidden messages easy for iOS users.
 
-**Table of Contents**
-
-[TOC]
 
 
 ### 1. Introduction
