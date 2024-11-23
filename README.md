@@ -1,3 +1,7 @@
+<div align="center">
+<img width=92 src="https://raw.githubusercontent.com/fishylunar/cloakpx/b69b35c2a50b70bcd32a7acb02e236bdacc5c854/public/icon-192.png" alt="CloakPX" title="CloakPX"/>
+</div>
+
 # CloakPX
 
 A web application for encoding and decoding secret messages in images.
