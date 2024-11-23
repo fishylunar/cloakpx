@@ -75,6 +75,7 @@ function EncodeTabContent() {
 			return;
 		}
 
+		// eslint-disable-next-line @typescript-eslint/no-non-null-asserted-optional-chain
 		const file = await convertToJPEG(fileInput.files?.[0]!);
 
 		if (!file) {

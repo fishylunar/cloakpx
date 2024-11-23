@@ -16,20 +16,20 @@ interface encodeRequest {
 }
 
 function getSecretMessageFromImage(imageBuffer: ArrayBufferLike): string {
-	let imageB64 = btoa(
+	const imageB64 = btoa(
 		new Uint8Array(imageBuffer).reduce(function (data, byte) {
 			return data + String.fromCharCode(byte);
 		}, '')
 	);
 
-	var exif = piexif.load('data:image/jpeg;base64,' + imageB64);
+	const exif = piexif.load('data:image/jpeg;base64,' + imageB64);
 
 	let secret = 'false';
-	for (var ifd in exif) {
+	for (const ifd in exif) {
 		if (ifd == 'thumbnail') {
 			continue;
 		}
-		for (var tag in exif[ifd]) {
+		for (const tag in exif[ifd]) {
 			if (piexif.TAGS[ifd][tag]['name'] === 'LensMake') {
 				secret = exif[ifd][tag];
 			}
@@ -40,7 +40,7 @@ function getSecretMessageFromImage(imageBuffer: ArrayBufferLike): string {
 }
 function decode(opt: decodeRequest): Error | string {
 	console.log(opt);
-	let secret = getSecretMessageFromImage(opt.imageBuffer) as string;
+	const secret = getSecretMessageFromImage(opt.imageBuffer) as string;
 	if (secret === 'false') throw new Error('No secret found in image');
 
 	// Decrypt the message
@@ -60,7 +60,7 @@ function decode(opt: decodeRequest): Error | string {
 function encodeSecretInImage(opt: encodeRequest) {
 	// Convert our image (bufferarray) to the jpeg type before converting it to base64
 
-	let imageB64 = btoa(
+	const imageB64 = btoa(
 		new Uint8Array(opt.imageBuffer as ArrayBufferLike).reduce(function (
 			data,
 			byte
@@ -70,7 +70,7 @@ function encodeSecretInImage(opt: encodeRequest) {
 		'')
 	);
 
-	var exif: { [key: string]: any } = {};
+	const exif: { [key: string]: string | undefined } = {};
 
 	// Encrypt the message to encode
 	const CryptographyOptions: CryptographyOptions = {
@@ -82,14 +82,14 @@ function encodeSecretInImage(opt: encodeRequest) {
 	};
 
 	exif[piexif.ExifIFD.LensMake] = cryptoHandler(CryptographyOptions);
-	var exifObj = {
+	const exifObj = {
 		'0th': {},
 		Exif: exif,
 		GPS: {},
 	};
 
-	var exifbytes = piexif.dump(exifObj);
-	var inserted = piexif.insert(
+	const exifbytes = piexif.dump(exifObj);
+	const inserted = piexif.insert(
 		exifbytes,
 		piexif.remove('data:image/jpeg;base64,' + imageB64)
 	);
@@ -97,7 +97,7 @@ function encodeSecretInImage(opt: encodeRequest) {
 	return inserted;
 }
 function encode(opt: encodeRequest) {
-	let newImageB64 = encodeSecretInImage(opt);
+	const newImageB64 = encodeSecretInImage(opt);
 	return newImageB64;
 }
 
