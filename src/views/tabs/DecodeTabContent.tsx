@@ -44,7 +44,7 @@ function DecodeTabContent() {
 		reader.onload = () => {
 			const fileBuffer = reader.result as ArrayBufferLike | string;
 
-			let decodeRequest: decodeRequest = {
+			const decodeRequest: decodeRequest = {
 				imageBuffer: fileBuffer as ArrayBufferLike,
 				secret: (document.getElementById("secret") as HTMLInputElement).value,
 				receiver: (document.getElementById("receiver") as HTMLInputElement)
@@ -56,6 +56,7 @@ function DecodeTabContent() {
 			try {
 				decodedMessage = decode(decodeRequest) as string;
 			} catch (error) {
+				console.error(error);
 				return toast({
 					description: "Error! - No secret found in the image",
 				  })
