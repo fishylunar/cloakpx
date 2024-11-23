@@ -13,6 +13,7 @@ import {
 import { Textarea } from "@/components/ui/textarea";
 import { Skeleton } from "@/components/ui/skeleton";
 import { decode, decodeRequest } from "@/logic/imageHandler";
+import { toast } from "@/hooks/use-toast"
 
 function DecodeTabContent() {
 	const [decodeButtonDisabled, setDecodeButtonDisabled] = useState(true);
@@ -50,9 +51,18 @@ function DecodeTabContent() {
 					.value,
 				sender: (document.getElementById("sender") as HTMLInputElement).value
 			};
-			let decodedMessage = decode(decodeRequest) as string;
+			let decodedMessage = "";
+			
+			try {
+				decodedMessage = decode(decodeRequest) as string;
+			} catch (error) {
+				return toast({
+					description: "Error! - No secret found in the image",
+				  })
+			}
 
 			setMessage(decodedMessage);
+			setDecodeButtonDisabled(true);
 			setLoading(false);
 		};
 		reader.readAsArrayBuffer(file);

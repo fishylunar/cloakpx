@@ -75,9 +75,7 @@ function EncodeTabContent() {
 			return;
 		}
 
-		const inputFile = fileInput.files?.[0];
-		const jpegFile = await convertToJPEG(inputFile!);
-		const file = jpegFile;
+		const file = await convertToJPEG(fileInput.files?.[0]!);
 
 		if (!file) {
 			return;
@@ -107,7 +105,7 @@ function EncodeTabContent() {
 	};
 
 	const downloadImage = () => {
-		saveAs(message, 'image.jpg') // Put your image URL here.
+		saveAs(message, 'image.jpg')
 	  }
 
 	return (
@@ -116,7 +114,7 @@ function EncodeTabContent() {
 				<CardHeader>
 					<CardTitle>Encode Message</CardTitle>
 					<CardDescription>
-						Encode the hidden message in the picture you received
+						Encode the hidden message in a picture
 					</CardDescription>
 				</CardHeader>
 

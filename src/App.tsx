@@ -3,6 +3,7 @@ import './App.css'
 import EncodeTabContent from './views/tabs/EncodeTabContent'
 import DecodeTabContent from './views/tabs/DecodeTabContent'
 import { ThemeProvider } from '@/components/ui/theme-provider'
+import { Toaster } from '@/components/ui/toaster'
 import Footer from './views/Footer'
 function App() {
 	return (
@@ -36,8 +37,10 @@ function App() {
 						<DecodeTabContent />
 					</TabsContent>
 				</Tabs>
+				<Toaster/>
 				<Footer />
 			</ThemeProvider>
+			
 		</>
 	)
 }

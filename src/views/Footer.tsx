@@ -40,7 +40,7 @@ function Footer() {
 					<span className='text-lg font-medium'>by</span>
 					<FaGithub size={20} className='text-primary' />
 					<a
-						href='https://github.com/fishylunar'
+						href='https://github.com/fishylunar/cloakpx'
 						target='_blank'
 						rel='noopener noreferrer'
 						className='text-primary text-lg font-medium hover:text-accent/60 transition-colors'
