@@ -1,0 +1,38 @@
+{
+    "name": "CloakPX",
+    "short_name": "CloakPX",
+    "start_url": "https://fishylunar.github.io/cloakpx",
+    "display": "standalone",
+    "description": "Simple tool to encode and decode hidden messages stored in images",
+    "lang": "en-US",
+    "dir": "auto",
+    "theme_color": "#000000",
+    "background_color": "#000000",
+    "orientation": "any",
+    "icons": [
+        {
+            "src": "/icon_512-maskable.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "maskable"
+        },
+        {
+            "src": "/icon_192.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "any"
+        }
+    ],
+    "shortcuts": [
+        {
+            "name": "Encode",
+            "url": "https://fishylunar.github.io/cloakpx/encode",
+            "description": "Encode a message"
+        },
+        {
+            "name": "Decode",
+            "url": "https://fishylunar.github.io/cloakpx/decode",
+            "description": "Decode a message"
+        }
+    ]
+}
