@@ -7,7 +7,7 @@ import Footer from './views/Footer'
 function App() {
 	return (
 		<>
-			<ThemeProvider defaultTheme='system' storageKey='vite-ui-theme'>
+			<ThemeProvider defaultTheme='dark' storageKey='vite-ui-theme'>
 				<img
 					className='w-16 h-16 rounded-full mt-2 mb-2'
 					src='/cloakpx/icon-512-maskable.png'
