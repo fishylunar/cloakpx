@@ -12,6 +12,7 @@ import {
 } from "@/components/ui/card";
 import { Skeleton } from "@/components/ui/skeleton";
 import { encode, encodeRequest } from "@/logic/imageHandler";
+import {saveAs} from 'file-saver';
 function EncodeTabContent() {
 	const [encodeButtonDisabled, setEncodeButtonDisabled] = useState(true);
 	const [loading, setLoading] = useState(true);
@@ -105,6 +106,10 @@ function EncodeTabContent() {
 		reader.readAsArrayBuffer(file);
 	};
 
+	const downloadImage = () => {
+		saveAs(message, 'image.jpg') // Put your image URL here.
+	  }
+
 	return (
 		<>
 			<Card>
@@ -174,8 +179,14 @@ function EncodeTabContent() {
 						{loading ? (
 							<Skeleton className="h-[125px] w-full rounded-xl" />
 						) : (
-							<img alt="Image with encoded secret" src={`${message}`} />
-						)}
+							<>
+							<Label className="text-left text-slate-400">
+								Click the image to save it.
+								</Label>
+							<img className="rounded-xl" onClick={downloadImage} alt="Image with encoded secret" src={`${message}`} />
+							</>
+							)
+						}
 					</div>
 				</CardFooter>
 			</Card>
