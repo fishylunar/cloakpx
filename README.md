@@ -6,7 +6,7 @@
 
 A web application for encoding and decoding secret messages in images.
 
-Try it out! - https://fishylunar.github.io/cloakpx
+Try it out! - https://cloakpx.staun.tech
 
 <br>
 
