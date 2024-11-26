@@ -11,7 +11,7 @@ function App() {
 			<ThemeProvider defaultTheme='dark' storageKey='vite-ui-theme'>
 				<img
 					className='w-16 h-16 rounded-full mt-2 mb-2'
-					src='/cloakpx/icon-512-maskable.png'
+					src='/icon-512-maskable.png'
 					alt='CloakPX logo'
 				/>
 				<h1 className='text-pretty font-bold text-4xl pb-8 pt-0 mb-2'>
